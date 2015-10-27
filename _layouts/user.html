@@ -1,0 +1,93 @@
+---
+layout: base
+---
+<div class="container">
+  <div class="page-user">
+    {% if site.user_claim %}
+    <h2 class="claim">
+      <i class="fa fa-quote-left"></i> {{ site.user_claim }} <i class="fa fa-quote-right"></i>
+    </h2>
+    {% endif %}
+    <div class="hello row">
+      {% if site.user_avatar %}
+      <div class="hello-avatar col-sx-5 col-sx-offset-2 col-sm-2 col-md-3">
+        <img alt="{{ site.author }}" class="img-responsive img-circle img-avatar" src="{{ site.user_avatar | prepend: site.baseurl }}">
+      </div>
+      {% endif %}
+      <div class="hello-about col-sx-10 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-1">
+        {{ content }}
+        <div class="hello-contact">
+          <p class="hello-contact-profiles">    
+            {% if site.github %}
+            <a href="https://github.com/{{ site.github }}"><i class="fa fa-github" title="GitHub" rel="tooltip"></i></a>
+            {% endif %}
+            {% if site.twitter %}
+            <a href="https://twitter.com/{{ site.twitter }}"><i class="fa fa-twitter" title="Twitter" rel="tooltip"></i></a>
+            {% endif %}
+            {% if site.google_plus %}
+            <a href="https://plus.google.com/{{ site.google_plus }}/posts"><i class="fa fa-google-plus" title="GooglePlus" rel="tooltip"></i></a>
+            {% endif %}
+            {% if site.linkedin %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin }}"><i class="fa fa-linkedin" title="LinkedIn" rel="tooltip"></i></a>
+            {% endif %}
+            <a href="mailto:{{ site.email }}" target="_blank"><i class="fa fa-envelope" rel="tooltip" title="Email"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% if site.user_twitter and site.user_twitter != 0 %}
+    <div class="panel panel-default panel-twitter">
+      <div class="panel-heading">
+        <h3 class="panel-title">Lasted tweets</h3>
+      </div>
+      <blockquote class="panel-body blockquote-twitter"><a class="twitter-timeline" data-widget-id="612752875748507649" data-tweet-limit="{{ site.user_twitter }}" href="https://twitter.com/{{ site.twitter }}" data-chrome="nofooter noborders noscrollbar transparent"></a></blockquote>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% if site.user_twitter and site.user_twitter != 0 %}
+<script type="text/javascript">
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    }; 
+    return t;
+  }(document, "script", "twitter-wjs"));
+  // hide the tweet header
+  hideTweetHeader = (function(e) {
+    if (!e) return;
+    var t = document.getElementById(e.target.id);
+    t.contentDocument.getElementsByClassName('timeline-header')[0].style.display="none";
+  });
+  // set width 100%
+  setWidth = (function(e) {
+    if (!e) return;
+    var t = document.getElementById(e.target.id);
+    var css = ".timeline { max-width:none !important; width:100% !important; } ";
+    var head = t.contentDocument.getElementsByTagName('head')[0];
+    var s = document.createElement('style');
+    if (s.styleSheet) {
+       s.styleSheet.cssText = css;
+    } else {
+       s.appendChild(document.createTextNode(css));
+    }
+    head.appendChild(s);
+    //t.contentDocument.getElementById(e.target.id).style.maxWidth="100% !important";
+  });
+  // Wait for the asynchronous resources to load
+  twttr.ready(function (twttr) {
+    // Now bind our custom intent events
+    twttr.events.bind('rendered', hideTweetHeader);
+    twttr.events.bind('rendered', setWidth);
+  });
+</script>
+{% endif %}
+

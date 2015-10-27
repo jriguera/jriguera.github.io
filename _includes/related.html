@@ -1,0 +1,20 @@
+  <div class="post-related">
+      <h3 class="post-related-title">Related Posts</h3>
+      <ul>
+      {% for cat in page.categories %}
+        {% if cat != site.blog_cat %}
+          {% assign cat_posts = site.categories[cat] %}
+          {% for post in cat_posts %}
+            {% for tag in page.tags %}
+              {% if post.tags contains tag %}
+                {% if post.url != page.url %}
+                <li><h4><a href="{{ post.url }}" class="post-link">{{ post.title }} <small>{{  post.date | date: "%b %-d, %Y" }}</small></a></h3></li>
+                {% endif %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+      </ul>
+  </div>

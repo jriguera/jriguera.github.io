@@ -1,0 +1,25 @@
+---
+layout: base
+---
+<div class="container">
+  <div class="page-search">
+    {% unless content == '' %}
+    <h2 class="search-desc"><span>{{ content }}</span></h2>
+    {% endunless %}
+    <div class="row">
+      <div id="post-results" class="posts col-xs-12 col-sm-8 col-md-9">      
+      </div>
+      <div class="slidebar col-xs-12 col-sm-4 col-md-3">
+        {% include search.html %}
+        {% include categories.html %}
+        {% include tags.html %}
+      </div>
+    </div>
+    {% include pagination.html %}
+  </div>
+</div>
+{% include search_template.html %}
+<script src="{{ site.baseurl }}js/lunr.min.js"></script>
+<script src="{{ site.baseurl }}js/tmpl.min.js"></script>
+<script src="{{ site.baseurl }}js/search.js"></script>
+

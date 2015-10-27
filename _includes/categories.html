@@ -1,0 +1,11 @@
+  <div class="blog-categories">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-success"><i class="glyphicon glyphicon-paperclip"></i> Categories</a>
+      {% for cat in site.categories %}
+        {% assign cat_name = cat | first %}
+        {% if cat_name != site.blog_cat %}
+          <a href="{{ cat_name | prepend: '/' | prepend: site.blog_cat | prepend: site.baseurl }}" class="list-group-item"><span class="badge">{{ cat[1] | size }}</span>{{ cat_name }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>

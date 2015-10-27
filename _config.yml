@@ -1,0 +1,51 @@
+# Site settings
+title:       Jose Riguera
+author:      Jose Riguera
+years:       1980-2015
+description: random thoughts  
+url:         "http://jose.riguera.es"
+baseurl:     "/"
+
+# PAGINATION
+paginate: 5
+paginate_path: "/blog/page:num/"
+permalink: "/:categories/:year/:month/:day/:title/"
+search_url: "/blog/search.html"
+blog_cat:  "blog"
+
+# Social
+google_plus: jriguera
+twitter: jose_riguera
+github: jriguera
+linkedin: jriguera
+email: jriguera@gmail.com
+
+# User
+user_claim: "Documenting is the second step in automation; the first one: do it manually... once!"
+user_avatar: "images/jriguera.png"
+user_twitter: 5
+
+# Optional features
+google_analytics: false
+post_related_posts: true
+# Disqus post comments (leave blank to disable Disqus)
+disqus:
+# Spot.im
+spot_im:
+post_sharing_icons: true
+post_related_posts: true
+
+# Post sharing icons
+share_facebook: true
+share_twitter: true
+share_googleplus: true
+share_linkedin: true
+share_reddit: true
+
+# Build settings
+markdown:     redcarpet
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+
+sass:
+  compressed: true

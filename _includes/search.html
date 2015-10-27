@@ -1,0 +1,29 @@
+    <form name="search" id="jssearch" action="{{ site.search_url }}" method="GET">
+        <div id="search" class="input-group">
+          <div class="input-group-btn search-panel">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span id="search_concept">Category: All</span> 
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              {% for cat in site.categories %}
+                {% assign cat_name = cat | first %}
+                {% if cat_name != site.blog_cat %}
+                  <li><a href="#{{ cat_name }}">{{ cat_name }}</a></li>
+                {% endif %}
+              {% endfor %}
+              <li class="divider"></li>
+              <li><a href="#all">All</a></li>
+            </ul>
+          </div>
+          <input type="hidden" name="search_param" value="all" id="search_cat">         
+          <input type="text" class="form-control" name="search_q" id="search_q" placeholder="Search term...">
+          <span class="input-group-btn search-button">
+             <button class="btn btn-default" type="submit">
+               <span class="glyphicon glyphicon-search"></span>
+             </button>
+          </span>
+        </div>
+    </form>
+    <script src="{{ site.baseurl }}js/query.js"></script>
+

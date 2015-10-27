@@ -1,0 +1,17 @@
+<div class="pagination clearfix">
+  {% if paginator.previous_page %}
+  <a role="button" class="btn btn-labeled btn-default" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+  {% else %}
+  <a role="button" class="disabled btn btn-labeled btn-default" href="#">
+  {% endif %}
+    <span class="btn-label"><i class="glyphicon glyphicon-chevron-left"></i></span>Newer
+  </a>
+  <span class="text-pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+  <a role="button" class="btn btn-labeled btn-default" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+  {% else %}
+  <a role="button" class="disabled btn btn-labeled btn-default" href="#">
+  {% endif %}
+     Older<span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
+  </a>
+</div>

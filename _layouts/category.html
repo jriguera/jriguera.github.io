@@ -1,0 +1,29 @@
+---
+layout: base
+---
+<div class="container">
+  <div class="page-category">
+    {% unless content == '' %}
+    <h2 class="category-desc"><span>{{ content }}</span></h2>
+    {% endunless %}
+    {% assign cats = page.url | split:'/' %}
+    {% assign cat = cats[2] %}
+      <div class="row">
+        <div class="posts col-xs-12 col-md-9">
+        {% for post in site.categories.[cat] %}
+          {% include post.html %}
+          {% unless forloop.last %}
+          <hr>
+          {% endunless %}
+        {% endfor %}
+        </div>
+        <div class="slidebar col-xs-4 col-md-3">
+        {% include search.html %}
+        {% include categories.html %}
+        {% include tags.html %}
+        </div>
+      </div>
+      {% include pagination.html %}
+  </div>
+</div>
+<script src="{{ site.baseurl }}js/blog.js"></script>

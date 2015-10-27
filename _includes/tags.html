@@ -1,0 +1,16 @@
+{% capture tags %}
+  {% for tag in site.tags %}
+    {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+  {% endfor %}
+{% endcapture %}
+{% assign sortedtags = tags | split:' ' | sort %}
+
+  <div class="blog-tags">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-info"><i class="glyphicon glyphicon-tags"></i> Tags</a>
+      {% for tag in sortedtags reversed %}
+      {% assign tagitems = tag | split: '#' %}
+      <a href="{{ tagitems[1] | prepend: 'blog/search.html?tag=' | prepend: site.baseurl }}" class="list-group-item"><span class="badge">{{ tagitems[2] }}</span>{{ tagitems[1] }}</a>
+      {% endfor %}
+    </div>
+  </div>

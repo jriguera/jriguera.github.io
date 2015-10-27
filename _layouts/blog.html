@@ -1,0 +1,27 @@
+---
+layout: base
+---
+<div class="container">
+  <div class="page-blog">
+    {% unless content == '' %}
+    <h2 class="blog-desc"><span>{{ content }}</span></h2>
+    {% endunless %}
+      <div class="row">
+        <div class="posts col-xs-12 col-sm-8 col-md-9">
+        {% for post in paginator.posts %}
+        {% assign post_cat = post.categories | first %}
+          {% include post.html %}
+          {% unless forloop.last %}
+          <hr>
+          {% endunless %}
+        {% endfor %}
+        </div>
+        <div class="sidebar col-xs-12 col-sm-4 col-md-3">
+        {% include search.html %}
+        {% include categories.html %}
+        {% include tags.html %}
+        </div>
+      </div>
+      {% include pagination.html %}
+    </div>
+</div>

@@ -1,0 +1,29 @@
+---
+layout: base
+---
+{% assign minutes = content | number_of_words | divided_by: 180 %}
+{% if minutes == 0 %}
+{% assign minutes = 1 %}
+{% endif %}
+<div class="container">
+  <div class="page-post">
+      <div class="post-header">
+        <h1>{{ page.title }}<small> {{ page.date | date: "%b %-d, %Y" }}</small></h1>
+      </div>
+      <article class="post-content">
+        {{ content }}
+      </article>
+      {% if site.post_sharing_icons %}
+        {% include sharing.html %}
+      {% endif %}
+      {% if site.disqus %}
+        {% include disqus.html %}
+      {% elsif site.spot_im %}
+        {% include spot_im.html %} 
+      {% endif %}
+      {% if site.post_related_posts %}
+        {% include related.html %}
+      {% endif %}
+  </div>
+</div>
+
