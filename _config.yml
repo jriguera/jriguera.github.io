@@ -28,10 +28,12 @@ user_twitter: 5
 # Optional features
 google_analytics: false
 post_related_posts: true
-# Disqus post comments (leave blank to disable Disqus)
+# Comments (leave blank to disable)
 disqus:
 # Spot.im
 spot_im:
+# Google plus
+google_plus: true
 post_sharing_icons: true
 post_related_posts: true
 

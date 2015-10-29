@@ -19,7 +19,9 @@ layout: base
       {% if site.disqus %}
         {% include disqus.html %}
       {% elsif site.spot_im %}
-        {% include spot_im.html %} 
+        {% include spot_im.html %}
+      {% elsif site.google_plus %}
+        {% include google_plus.html %}
       {% endif %}
       {% if site.post_related_posts %}
         {% include related.html %}
