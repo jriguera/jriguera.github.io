@@ -95,8 +95,8 @@ to the files on the repository and read the comments. A good starting point is
  * If you want to maintain your code, **keep name consistency between the 
    playbooks, inventories, roles and group variables**. In Ansible there is a
    global variable scope, so a good approach is prefixing all role variables
-   with the name of the role. I am using `_rolename` for internal facts 
-   defined within the role, in the same way as Python variables.
+   with the name of the role. I am using `_rolename` (*underscore* prefix) for 
+   internal facts defined within the role, in the same way as Python variables.
 
  * **Use `defaults` to define the service settings** in order to get parameterized 
    roles. There you should define your service defaults settings (to use them in 
