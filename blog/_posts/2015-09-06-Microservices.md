@@ -36,18 +36,18 @@ which are even more important than do everything as microservices, for example,
 what is the difference between microservices and 
 [SOA](https://en.wikipedia.org/wiki/Service-oriented_architecture)? 
 After having a look on the wikipedia it seems that SOA is a "entreprise" 
-concept while the microservices architecture is a way to implement it. In 
-fact the term is part of a design way based set of patterns to create small 
-composable applications, but is it the only way to do it? When I was at the 
-university, we had to learn a lot of software patterns. For me the most 
-valuable were some architectural patterns, because by using them, one can 
-build really big applications: those are the kind of patterns which help you 
-by defining a kind of skeleton for the application. Of course, it was more 
-than 10 years ago! we were focused on J2EE applications ... Do you remember 
+concept while the microservices architecture is a way to implement it but, 
+by using APIs. In fact the term is part of a design way based set of patterns 
+to create small composable applications, but is it the only way to do it? What 
+is the limit? When I was at the university, we had to learn a lot of software 
+patterns. For me, the most valuable were some architectural patterns, because by 
+using them, one can build really big applications: those are the kind of patterns 
+which help you by defining a kind of skeleton for the application. Of course, it 
+was more than 10 years ago! we were focused on J2EE applications ... Do you remember 
 [CORBA](https://en.wikipedia.org/wiki/Common_Object_Request_Broker_Architecture)? 
 IDL? ... we were using those technologies building RPC based applications with 
 interfaces ... painful ... but I think those old patterns have still a lot 
-to say helping to build modular and scalable applications.
+to say helping to build modular and scalable applications (i.e. message queues).
 
 
 Do not get me wrong!, I am not against the microservice approach, it is a 
@@ -85,7 +85,7 @@ Define endpoints for the services. Take into account methodologies for building
 applications like the great [twelve-factor app](http://12factor.net/), use 
 patterns like [circuit breakers](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern), 
 message queues, health monitors, metrics ...
-also, some of those can be shared using a common platform 
+also, some of those can be managed using a common platform 
 ([PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service)).
 Above all, just be objective, one can design a service not following the 
 *micro* approach, its just a service and it can be perfectly valid, even if 
