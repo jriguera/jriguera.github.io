@@ -71,7 +71,7 @@ layout: base
   setWidth = (function(e) {
     if (!e) return;
     var t = document.getElementById(e.target.id);
-    var css = ".timeline { max-width:none !important; width:100% !important; } ";
+    var css = ".timeline, .stream { max-width:none !important; width:100% !important; } ";
     var head = t.contentDocument.getElementsByTagName('head')[0];
     var s = document.createElement('style');
     if (s.styleSheet) {
