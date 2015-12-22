@@ -18,4 +18,4 @@ out building in-house IaaS and PaaS solutions, bridging the gap between develope
 
 This is the place to find some information about me, know more about my work, 
 [read some articles about my thoughts](/blog). Feel free to [email me](mailto:jriguera@gmail.com) 
-if you would like to get in touch or find me in the social media:
+if you would like to get in touch or find me on social media:
