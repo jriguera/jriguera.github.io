@@ -235,6 +235,10 @@ footer {
    float: right;
 }
 
+.youtube iframe {
+   display: block;
+   margin: 3em auto;
+}
 
 /* pagination */
 

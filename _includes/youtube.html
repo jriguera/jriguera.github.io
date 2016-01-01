@@ -1,0 +1,7 @@
+<div class="youtube">
+{% if include.subs and include.subs == '1' %}
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ include.id }}?cc_load_policy=1" frameborder="0" allowfullscreen></iframe>
+{% else %}
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allowfullscreen></iframe>
+{% endif %}
+</div>
