@@ -7,7 +7,7 @@
   <meta name="author" content="{{ site.author }}">
   <meta name="keywords" content="{% if page.categories %}{{ page.categories | join: ', ' }}{% else %}{{ site.author }}{% endif %}">
   <meta name="application-name" content="&nbsp;"/>
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ site.baseurl }}images/apple-touch-icon-57x57.png" />
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}images/apple-touch-icon-114x114.png" />
