@@ -1,0 +1,15 @@
+<div class="giphy">
+  <script language="javascript" type="text/javascript">
+  var search = "{{ include.search }}";
+  var reload = "{{ include.reload }}";
+  Jekyll.animateGiphy(search);
+  if (reload != 0) {
+     setInterval(function() {
+        // this will run after every 30 seconds
+  	Jekyll.animateGiphy(search);
+     }, reload);
+  };
+  </script>
+  <figure id="giphyme">
+  </figure>
+</div>

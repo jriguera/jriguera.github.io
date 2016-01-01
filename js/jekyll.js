@@ -143,6 +143,29 @@
     };
   }
 
+  // Get a gif from Giphy and include it in the container
+  var animateGiphy = function (giphysearch, containername) {
+    if (!giphysearch || 0 === giphysearch.length) return;
+    if (containername === undefined) containername='#giphyme';
+
+    var api = 'http://api.giphy.com/v1/gifs/random';
+    var fail = 'Gipghy API returned an error.';
+    var apisearch = api + '?' + Jekyll.encodeQueryData({"api_key": "dc6zaTOxFJmzC", "tag": giphysearch});
+    var jqxhr = $.getJSON(apisearch, function(data) {
+     	if (data.meta.status == 200) {
+           //var img = data.data.fixed_height_downsampled_url;
+           var img = data.data.image_url;
+           console.log(img);
+           var $container = $(containername);
+           $container.html('<center><img src="' + img + '" alt="' + giphysearch + '" title="GIF via Giphy"></center>');
+     	}
+    });
+    jqxhr.fail(function() {
+        console.log(fail);
+    });
+  }
+
+
   // Define the app object and expose it in the global scope
   window.Jekyll = {
     majusculeFirst: majusculeFirst,
@@ -152,7 +175,8 @@
     layoutResultsPage: layoutResultsPage,
     encodeQueryData: encodeQueryData,
     replaceERBTags: replaceERBTags,
-    findBootstrapEnvironment: findBootstrapEnvironment
+    findBootstrapEnvironment: findBootstrapEnvironment,
+    animateGiphy: animateGiphy
   };
 })(window, window.document);
 
