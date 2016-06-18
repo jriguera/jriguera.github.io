@@ -11,7 +11,7 @@
 
   // Usage:
   //   var data = { 'first name': 'George', 'last name': 'Jetson', 'age': 110 };
-  //   var querystring = EncodeQueryData(data); 
+  //   var querystring = EncodeQueryData(data);
   var encodeQueryData = function (data) {
     var ret = [];
     for (var d in data)
@@ -72,7 +72,7 @@
     }
     return null;
   };
-  
+
   // Filters posts with the condition `post['property'] == value`
   // Accepts:
   //   posts - array of post objects and a string
@@ -184,14 +184,14 @@
 $(function() {
 
 //  var responsiveHeader = function() {
-//       var size = Jekyll.findBootstrapEnvironment();     
+//       var size = Jekyll.findBootstrapEnvironment();
 //       if (size == 'xs') {
 //         if ($('#header-button-mobile').hasClass('hidden')) {
 //            $('#header-tabs-items').removeClass('nav');
 //            $('#header-tabs-items').removeClass('nav-tabs');
 //            $('#header-button-mobile').removeClass('hidden');
 //            $('#header-tabs-items').addClass('dropdown-menu');
-//         }    
+//         }
 //       } else {
 //         if (! $('#header-button-mobile').hasClass('hidden')) {
 //            $('#header-button-mobile').addClass('hidden');
@@ -199,7 +199,7 @@ $(function() {
 //            $('#header-tabs-items').addClass('nav-tabs');
 //            $('#header-tabs-items').removeClass('dropdown-menu');
 //         }
-//       }    
+//       }
 //  };
 //  responsiveHeader();
 //  $(window).bind('resize', responsiveHeader);

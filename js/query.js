@@ -11,17 +11,17 @@ $(function() {
 
   $('#search .search-button button').click(function(e) {
     e.preventDefault();
-    //get the action-url of the form    
+    //get the action-url of the form
     var data = {};
     var url = actionurl + '?';
     data['cat'] = $('#search_cat').val();
     data['q'] = $('#search_q').val();
-    
+
     var count = 0;
     for (var key in data) {
         count++;
     }
-    for (var key in data) {    
+    for (var key in data) {
         url = url + key + '=' + encodeURIComponent(data[key]);
         count--;
         if (count != 0) {
@@ -31,4 +31,3 @@ $(function() {
     window.location.href = url;
   });
 });
-
